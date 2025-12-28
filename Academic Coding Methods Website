@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Học Thuật Toán & Code</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <!-- Prism -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #11162a;
+      --panel-2: #0f1425;
+      --text: #e6e9ff;
+      --muted: #9aa4ff;
+      --accent: linear-gradient(135deg, #6a5cff, #00d4ff);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: var(--panel-2);
+      height: 100vh;
+      overflow-y: auto;
+      padding: 24px;
+      position: fixed;
+      border-right: 1px solid #1c2345;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-section {
+      margin-bottom: 12px;
+    }
+
+    .nav-title {
+      cursor: pointer;
+      font-weight: 600;
+      margin: 8px 0;
+      color: #fff;
+    }
+
+    .nav-sub {
+      margin-left: 14px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .nav-sub a {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 6px 0;
+    }
+
+    .nav-sub a:hover { color: #fff; }
+
+    /* Main */
+    .main {
+      margin-left: 280px;
+      padding: 56px;
+      max-width: 1100px;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 64px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cfd6ff;
+      line-height: 1.8;
+    }
+
+    section {
+      margin-bottom: 72px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-top: 32px;
+      color: #dbe0ff;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-top: 24px;
+      color: #cfd6ff;
+    }
+
+    p, li {
+      line-height: 1.8;
+      color: #d6dbff;
+    }
+
+    ul { padding-left: 20px; }
+
+    /* Code block */
+    .code-box {
+      background: var(--panel);
+      border-radius: 14px;
+      margin-top: 24px;
+      padding: 16px;
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .code-content {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .collapsed .code-content {
+      display: none;
+    }
+
+    pre {
+      margin: 0;
+      border-radius: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+    }
+
+    .tip {
+      background: rgba(100,120,255,0.1);
+      border-left: 4px solid #6a5cff;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>📚 Mục lục</h2>
+
+    <div class="nav-section">
+      <div class="nav-title" onclick="toggleNav(this)">I. Giới thiệu về Code ▸</div>
+      <div class="nav-sub">
+        <a href="#cpp">C++</a>
+        <a href="#python">Python</a>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-title" onclick="toggleNav(this)">II. Cấu trúc đề / Script ▸</div>
+      <div class="nav-sub">
+        <a href="#thinking">Tư duy về bài</a>
+        <a href="#judging">Phương pháp chấm bài</a>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-title" onclick="toggleNav(this)">III. Phương pháp làm bài ▸</div>
+      <div class="nav-sub">
+        <a href="#twopointers">Two Pointers</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Học Tư Duy Thuật Toán & Code</h1>
+      <p>
+        Đây là tài liệu học thuật giúp ông bạn hiểu bản chất của việc lập trình: 
+        từ tư duy giải bài toán, cấu trúc đề thi, cách máy chấm hoạt động,
+        cho tới các phương pháp thuật toán cốt lõi bằng <b>C++</b> và <b>Python</b>.
+      </p>
+    </div>
+
+    <!-- I -->
+    <section>
+      <h2>I. Giới thiệu về Code</h2>
+      <h3 id="cpp">C++</h3>
+      <p>C++ là ngôn ngữ mạnh, tốc độ cao, được sử dụng phổ biến trong thi đấu thuật toán.</p>
+
+      <h3 id="python">Python</h3>
+      <p>Python dễ đọc, nhanh viết, phù hợp cho prototyping và bài toán không quá nặng.</p>
+    </section>
+
+    <!-- II -->
+    <section>
+      <h2>II. Cấu trúc đề / Script</h2>
+
+      <h3 id="thinking">1. Tư duy về bài</h3>
+      <p>
+        Bài toán lập trình không phải học thuộc lời giải, mà là học cách:
+      </p>
+      <ul>
+        <li>Phân tích dữ liệu vào – ra</li>
+        <li>Nhận diện mô hình bài toán</li>
+        <li>Tìm con đường giải tối ưu</li>
+      </ul>
+
+      <h3 id="judging">2. Phương pháp chấm bài</h3>
+      <h4>a) Giới hạn thời gian</h4>
+      <p>Mỗi bài đều có thời gian chạy tối đa (thường 1–2 giây).</p>
+
+      <h4>b) Máy chấm bài</h4>
+      <p>Máy chấm so sánh output với đáp án chuẩn.</p>
+
+      <h4>c) Subtask</h4>
+      <p>Mỗi subtask có giới hạn nhỏ hơn để ăn điểm từng phần.</p>
+
+      <h4>d) Độ phức tạp</h4>
+      <p>Mục tiêu của script là giảm độ phức tạp xuống mức chạy được trong thời gian cho phép.</p>
+    </section>
+
+    <!-- III -->
+    <section id="twopointers">
+      <h2>III. Phương pháp làm bài</h2>
+      <h3>Two Pointers</h3>
+
+      <h4>1. Khái niệm</h4>
+      <p>Dùng hai con trỏ để duyệt mảng nhằm giảm độ phức tạp.</p>
+
+      <h4>2. Ví dụ</h4>
+      <p>Kiểm tra cặp số có tổng bằng X trong mảng đã sắp xếp.</p>
+
+      <h4>3. Các dạng</h4>
+      <ul>
+        <li>Ngược chiều</li>
+        <li>Cùng chiều (Sliding Window)</li>
+        <li>Fast – Slow</li>
+      </ul>
+
+      <h4>4. Code</h4>
+      <div class="code-box" id="codeBox">
+        <div class="code-header" onclick="toggleCode()">▶ Xem code C++ & Python</div>
+        <div class="code-content">
+          <pre><code class="language-cpp">#include <bits/stdc++.h>
+using namespace std;
+
+bool twoSum(vector<int>& a, int X) {
+    int l = 0, r = a.size() - 1;
+    while (l < r) {
+        int s = a[l] + a[r];
+        if (s == X) return true;
+        if (s < X) l++;
+        else r--;
+    }
+    return false;
+}
+</code></pre>
+
+          <pre><code class="language-python">def two_sum(arr, X):
+    l, r = 0, len(arr) - 1
+    while l < r:
+        s = arr[l] + arr[r]
+        if s == X:
+            return True
+        if s < X:
+            l += 1
+        else:
+            r -= 1
+    return False
+</code></pre>
+        </div>
+      </div>
+
+      <h4>5. Mẹo & từ khóa</h4>
+      <div class="tip">
+        Từ khóa: mảng đã sắp xếp, tìm cặp, đoạn con liên tiếp, tối ưu O(n).
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script>
+    function toggleCode() {
+      document.getElementById('codeBox').classList.toggle('collapsed');
+    }
+
+    function toggleNav(el) {
+      const sub = el.nextElementSibling;
+      sub.style.display = sub.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
