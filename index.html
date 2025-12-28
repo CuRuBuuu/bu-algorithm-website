@@ -220,14 +220,14 @@
     <section>
       <h2>I. Giới thiệu về Code</h2>
       <h3 id="cpp">C++</h3>
-      <p>C++ là ngôn ngữ lập trình mạnh mẽ, có hiệu năng rất cao, được xây dựng trên nền tảng của ngôn ngữ C và bổ sung thêm nhiều tính năng hiện đại như lập trình hướng đối tượng, lập trình tổng quát (template), và thư viện chuẩn phong phú.</p>
+      <p><b>C++</b> là ngôn ngữ lập trình mạnh mẽ, có hiệu năng rất cao, được xây dựng trên nền tảng của ngôn ngữ C và bổ sung thêm nhiều tính năng hiện đại như lập trình hướng đối tượng, lập trình tổng quát (template), và thư viện chuẩn phong phú.</p>
       <p>Nhờ khả năng kiểm soát bộ nhớ tốt, tốc độ thực thi nhanh và độ ổn định cao, C++ trở thành lựa chọn hàng đầu trong thi đấu thuật toán, lập trình thi học sinh giỏi, ICPC, Olympiad Tin học, cũng như các hệ thống yêu cầu hiệu suất lớn.</p>
       <p>Trong các bài toán thuật toán, C++ cho phép xử lý dữ liệu lớn, vòng lặp phức tạp, và cấu trúc dữ liệu nâng cao (như vector, set, map, priority_queue, …) một cách hiệu quả. Thư viện STL (Standard Template Library) giúp người lập trình triển khai ý tưởng nhanh chóng mà vẫn đảm bảo tối ưu thời gian và bộ nhớ.</p>
       <p>Bên cạnh đó, C++ còn được sử dụng rộng rãi trong phát triển game, hệ điều hành, engine đồ họa, phần mềm nhúng và nhiều hệ thống cốt lõi khác, cho thấy tính linh hoạt và sức mạnh lâu dài của ngôn ngữ này.</p>
       <p>Tuy cú pháp của C++ tương đối chặt chẽ và khó tiếp cận hơn so với một số ngôn ngữ khác, nhưng khi đã nắm vững, người học sẽ hình thành được tư duy lập trình logic, tư duy tối ưu, và nền tảng vững chắc để tiếp cận các ngôn ngữ cũng như công nghệ nâng cao sau này.</p>
 
       <h3 id="python">Python</h3>
-      <p>Python là ngôn ngữ lập trình có cú pháp đơn giản, dễ đọc và dễ hiểu, giúp người học nhanh chóng tiếp cận tư duy lập trình mà không bị rào cản bởi cú pháp phức tạp. Nhờ cách viết ngắn gọn và rõ ràng, Python cho phép viết code rất nhanh, đặc biệt phù hợp cho việc prototyping (xây dựng và kiểm thử ý tưởng ban đầu).</p>
+      <p><b>Python</b> là ngôn ngữ lập trình có cú pháp đơn giản, dễ đọc và dễ hiểu, giúp người học nhanh chóng tiếp cận tư duy lập trình mà không bị rào cản bởi cú pháp phức tạp. Nhờ cách viết ngắn gọn và rõ ràng, Python cho phép viết code rất nhanh, đặc biệt phù hợp cho việc prototyping (xây dựng và kiểm thử ý tưởng ban đầu).</p>
       <p>Python thường được sử dụng trong các bài toán không yêu cầu hiệu năng quá cao, nơi tính dễ đọc và tốc độ phát triển được ưu tiên hơn tốc độ thực thi. Với hệ sinh thái thư viện phong phú, Python hỗ trợ tốt cho nhiều lĩnh vực như xử lý dữ liệu, trí tuệ nhân tạo, machine learning, tự động hóa, và khoa học máy tính ứng dụng.</p>
       <p>Trong học tập và giải bài tập thuật toán, Python giúp người học tập trung vào ý tưởng và phương pháp giải, thay vì phải lo nhiều đến quản lý bộ nhớ hay các chi tiết kỹ thuật thấp. Điều này khiến Python trở thành lựa chọn rất tốt cho người mới bắt đầu, cũng như cho các bài toán có độ phức tạp vừa phải.</p>
       <p>Tuy tốc độ chạy của Python chậm hơn so với C++, nhưng với những bài toán phù hợp, Python vẫn mang lại hiệu quả cao nhờ tính linh hoạt, khả năng mở rộng, và thời gian phát triển ngắn.</p>
@@ -258,7 +258,16 @@
       <p>Mỗi subtask có giới hạn nhỏ hơn để ăn điểm từng phần.</p>
 
       <h4>d) Độ phức tạp</h4>
-      <p>Mục tiêu của script là giảm độ phức tạp xuống mức chạy được trong thời gian cho phép.</p>
+      <p>Độ phức tạp (complexity) dùng để đánh giá mức độ tốn tài nguyên của một thuật toán khi kích thước dữ liều đầu vào tăng lên.</p>
+      <p>Thông thường tôi quan tâm đến hai loại:</p>
+      <ui>
+        <li><b>Độ phúc tạp thời gian:</b> thuật toán chạy bao nhiêu phép toán.</li>
+        <li><b>Độ phức tạp bộ nhớ:</b> thuật toán dùng bao nhiêu bộ nhớ</li>
+      </ui>
+      <p><b>Tại sao cần quan tâm đến độ phức tạp?</b></p>
+      <p>Máy tính hay bài toán có giới hạn về thời gian chạy (thời ở khoảng 1-2 giây)</p>
+      <p>Nếu thuật toán quá chậm, dù code đúng nhưng vẫn bị <b>TLE (Time Limit Exceeded)</b> và máy chấm sẽ không tính điểm của task đó.</p>
+      <p>Vì vậy, mục tiêu của việc thiết kế thuật toán là giảm độ phức tạp xuống mức có thể chạy được trong thời gian giới hạn.</p>
     </section>
 
     <!-- III -->
@@ -295,7 +304,6 @@ l=0 (1), r=2 (5)  → 6  < 8 → l++
 l=1 (3), r=2 (5)  → 8 ✓ </code></pre>
   
 </div>
-
       <h4>3. Các dạng</h4>
       <ul>
         <li>Ngược chiều</li>
