@@ -220,10 +220,17 @@
     <section>
       <h2>I. Giới thiệu về Code</h2>
       <h3 id="cpp">C++</h3>
-      <p>C++ là ngôn ngữ mạnh, tốc độ cao, được sử dụng phổ biến trong thi đấu thuật toán.</p>
+      <p>C++ là ngôn ngữ lập trình mạnh mẽ, có hiệu năng rất cao, được xây dựng trên nền tảng của ngôn ngữ C và bổ sung thêm nhiều tính năng hiện đại như lập trình hướng đối tượng, lập trình tổng quát (template), và thư viện chuẩn phong phú.
+        Nhờ khả năng kiểm soát bộ nhớ tốt, tốc độ thực thi nhanh và độ ổn định cao, C++ trở thành lựa chọn hàng đầu trong thi đấu thuật toán, lập trình thi học sinh giỏi, ICPC, Olympiad Tin học, cũng như các hệ thống yêu cầu hiệu suất lớn.
+        Trong các bài toán thuật toán, C++ cho phép xử lý dữ liệu lớn, vòng lặp phức tạp, và cấu trúc dữ liệu nâng cao (như vector, set, map, priority_queue, …) một cách hiệu quả. Thư viện STL (Standard Template Library) giúp người lập trình triển khai ý tưởng nhanh chóng mà vẫn đảm bảo tối ưu thời gian và bộ nhớ.
+        Bên cạnh đó, C++ còn được sử dụng rộng rãi trong phát triển game, hệ điều hành, engine đồ họa, phần mềm nhúng và nhiều hệ thống cốt lõi khác, cho thấy tính linh hoạt và sức mạnh lâu dài của ngôn ngữ này.
+        Tuy cú pháp của C++ tương đối chặt chẽ và khó tiếp cận hơn so với một số ngôn ngữ khác, nhưng khi đã nắm vững, người học sẽ hình thành được tư duy lập trình logic, tư duy tối ưu, và nền tảng vững chắc để tiếp cận các ngôn ngữ cũng như công nghệ nâng cao sau này.</p>
 
       <h3 id="python">Python</h3>
-      <p>Python dễ đọc, nhanh viết, phù hợp cho prototyping và bài toán không quá nặng.</p>
+      <p>Python là ngôn ngữ lập trình có cú pháp đơn giản, dễ đọc và dễ hiểu, giúp người học nhanh chóng tiếp cận tư duy lập trình mà không bị rào cản bởi cú pháp phức tạp. Nhờ cách viết ngắn gọn và rõ ràng, Python cho phép viết code rất nhanh, đặc biệt phù hợp cho việc prototyping (xây dựng và kiểm thử ý tưởng ban đầu).
+        Python thường được sử dụng trong các bài toán không yêu cầu hiệu năng quá cao, nơi tính dễ đọc và tốc độ phát triển được ưu tiên hơn tốc độ thực thi. Với hệ sinh thái thư viện phong phú, Python hỗ trợ tốt cho nhiều lĩnh vực như xử lý dữ liệu, trí tuệ nhân tạo, machine learning, tự động hóa, và khoa học máy tính ứng dụng.
+        Trong học tập và giải bài tập thuật toán, Python giúp người học tập trung vào ý tưởng và phương pháp giải, thay vì phải lo nhiều đến quản lý bộ nhớ hay các chi tiết kỹ thuật thấp. Điều này khiến Python trở thành lựa chọn rất tốt cho người mới bắt đầu, cũng như cho các bài toán có độ phức tạp vừa phải.
+        Tuy tốc độ chạy của Python chậm hơn so với C++, nhưng với những bài toán phù hợp, Python vẫn mang lại hiệu quả cao nhờ tính linh hoạt, khả năng mở rộng, và thời gian phát triển ngắn.</p>
     </section>
 
     <!-- II -->
@@ -264,6 +271,26 @@
 
       <h4>2. Ví dụ</h4>
       <p>Kiểm tra cặp số có tổng bằng X trong mảng đã sắp xếp.</p>
+      
+      <h4>Ý tưởng làm bài</h4>
+<div class="code-box">
+<pre><code class="language-none">Khởi tạo hai con trỏ:
+- Con trỏ trái (l) bắt đầu từ đầu mảng
+- Con trỏ phải (r) bắt đầu từ cuối mảng
+
+
+Trong khi l < r:
+- Tính tổng a[l] + a[r]
+- Nếu tổng == X → tìm được đáp án, dừng
+- Nếu tổng < X → tăng l (cần tổng lớn hơn)
+- Nếu tổng > X → giảm r (cần tổng nhỏ hơn)
+
+
+Kết thúc vòng lặp mà chưa tìm được → không tồn tại cặp phù hợp
+
+
+Độ phức tạp: O(n) do mỗi con trỏ chỉ đi tối đa n bước</code></pre>
+</div>
 
       <h4>3. Các dạng</h4>
       <ul>
