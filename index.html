@@ -258,39 +258,36 @@
     <!-- III -->
     <section id="twopointers">
       <h2>III. Phương pháp làm bài</h2>
-      <h3>Two Pointers</h3>
+      <h3>Hai con trỏ (Two Pointers)</h3>
 
       <h4>1. Khái niệm</h4>
-      <p>Dùng hai con trỏ để duyệt mảng nhằm giảm độ phức tạp.</p>
+      <p>Dùng hai con trỏ để duyệt mảng nhằm giải quyết bài toán nhanh hơn và giảm độ phức tạp.</p>
 
-      <h4>2. Ví dụ</h4>
-      <p>Kiểm tra cặp số có tổng bằng X trong mảng đã sắp xếp.</p>
-
-      <h4>Ý tưởng làm bài</h4>
+      <h4>2. Các dạng</h4>
+      <p><b>Dạng 1: Hai đầu mảng (Opposite Pointers)</b></p>
+      <p>Cách hoạt động:</p>
+      <ul>
+        <li>Đặt hai điểm ở hai đầu mảng đã sắp xếp từ bé đến lớn</li>
+        <li>Nếu kết quả > đáp án, giảm giá trị điểm cuối</li>
+        <li>Nếu kết quả < đáp án, tăng giá trị điểm đầu</li>
+        <li>Nếu tìm thấy đáp án, dừng</li>
+        <li>Vòng lặp kết thúc mà chưa tìm được => không tồn tại cặp nào</li>
+        <p>Độ phức tạp: O(n) vì hai con trỏ đi tổng tối đa n bước.</p>
+      </ul>
+      <p><b>Ví dụ:</b></b>
+      <p>Cho mảng a có n phần tử, tìm cặp số trong mảng a có tổng bằng x.</p>
       <div class="code-box">
-        <pre><code class="language-none">Khởi tạo hai con trỏ:
-- Con trỏ trái (l) bắt đầu từ đầu mảng
-- Con trỏ phải (r) bắt đầu từ cuối mảng
+        <pre><code class="language-none">n = 4
+a = [1, 3, 5, 10]
+x = 8
 
-Trong khi l < r:
-- Tính tổng a[l] + a[r]
-- Nếu tổng == X → tìm được đáp án, dừng
-- Nếu tổng < X → tăng l (cần tổng lớn hơn)
-- Nếu tổng > X → giảm r (cần tổng nhỏ hơn)
-
-Kết thúc vòng lặp mà chưa tìm được → không tồn tại cặp phù hợp
-
-Độ phức tạp: O(n) do mỗi con trỏ chỉ đi tối đa n bước</code></pre>
+Đặt hai đầu mút là l = 0 và r = n-1
+l=0 (a[l]=1), r=3 (a[r]=10) → 11 > 8 → giảm r
+l=0 (a[l]=1), r=2 (a[r]=5)  → 6  < 8 → tăng l
+l=1 (a[l]=3), r=2 (a[r]=5)  → 8  ✓ </pre></code>
       </div>
 
-      <h4>3. Các dạng</h4>
-      <ul>
-        <li>Ngược chiều</li>
-        <li>Cùng chiều (Sliding Window)</li>
-        <li>Fast – Slow</li>
-      </ul>
-
-      <h4>4. Code</h4>
+      <p><b>! Code</b></p>
       <div class="code-box" id="codeBox">
         <div class="code-header" onclick="toggleCode()">▶ Xem code C++ & Python</div>
         <div class="code-content">
@@ -323,8 +320,31 @@ bool twoSum(vector<int>& a, int X) {
 </code></pre>
         </div>
       </div>
+      
+      <p><b>Dạng 2: Cửa sổ trượt (Sliding Window)</b></p>
+      <p>Cách hoạt động:</p>
+      <ul>
+        <li>Hai điểm ở đầu mảng, một điểm giữ đầu mảng con, một điểm mở rộng mảng con</li>
+        <li>Nếu thoả mãn điều kiện, tăng điểm bên phải mở rộng mảng con</li>
+        <li>Nếu không thoả mãn điều kiện, tăng điểm bên trái giữ đầu mảng con</li>
+        <li>Trong khi thoả mãn điều kiện, tạo một biến lưu kết quả (lớn nhất)</li>
+        <p>Độ phức tạp: O(2n) vì mỗi con trỏ chạy tối đa n bước,</p>
+      </ul>
+      
+      <p><b>Ví dụ</p></b>
+      <p>Cho mảng a có n phần tử, tìm mảng con liên tiếp dài nhất có tổng ≤ s.</p>
+      <div class="code-box">
+        <pre><code class="language-none">n = 6
+a = [1, 3, 10, 5, 6, 1]
+s = 12
 
-      <h4>5. Mẹo & từ khóa</h4>
+Đặt hai đầu mút là l = 0 và r = 1
+l=0 (a[l]=1), r=1 (a[r]=3)   → 4  ≤ 12 → tăng r
+l=0 (a[l]=1), r=2 (a[r]=10)  → 14 > 12 → tăng l
+l=1 (a[l]=3), r=2 (a[r]=10)  → 13 > 12  ✓ </pre></code>
+      </div>
+      
+      <h4>3. Mẹo & từ khóa</h4>
       <div class="tip">
         Từ khóa: mảng đã sắp xếp, tìm cặp, đoạn con liên tiếp, tối ưu O(n).
       </div>
