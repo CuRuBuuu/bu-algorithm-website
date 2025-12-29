@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Học Thuật Toán & Code</title>
- 
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
@@ -175,7 +175,6 @@
 </head>
 <body>
 
-
   <!-- Sidebar -->
   <aside class="sidebar">
   <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
@@ -204,8 +203,8 @@
     </ul>
   </nav>
 </aside>
-<!-- Main-->
 
+  <!-- Main -->
   <main class="main">
 
     <!-- Hero -->
@@ -222,17 +221,10 @@
     <section>
       <h2>I. Giới thiệu về Code</h2>
       <h3 id="cpp">C++</h3>
-      <p><b>C++</b> là ngôn ngữ lập trình mạnh mẽ, có hiệu năng rất cao, được xây dựng trên nền tảng của ngôn ngữ C và bổ sung thêm nhiều tính năng hiện đại như lập trình hướng đối tượng, lập trình tổng quát (template), và thư viện chuẩn phong phú.</p>
-      <p>Nhờ khả năng kiểm soát bộ nhớ tốt, tốc độ thực thi nhanh và độ ổn định cao, C++ trở thành lựa chọn hàng đầu trong thi đấu thuật toán, lập trình thi học sinh giỏi, ICPC, Olympiad Tin học, cũng như các hệ thống yêu cầu hiệu suất lớn.</p>
-      <p>Trong các bài toán thuật toán, C++ cho phép xử lý dữ liệu lớn, vòng lặp phức tạp, và cấu trúc dữ liệu nâng cao (như vector, set, map, priority_queue, …) một cách hiệu quả. Thư viện STL (Standard Template Library) giúp người lập trình triển khai ý tưởng nhanh chóng mà vẫn đảm bảo tối ưu thời gian và bộ nhớ.</p>
-      <p>Bên cạnh đó, C++ còn được sử dụng rộng rãi trong phát triển game, hệ điều hành, engine đồ họa, phần mềm nhúng và nhiều hệ thống cốt lõi khác, cho thấy tính linh hoạt và sức mạnh lâu dài của ngôn ngữ này.</p>
-      <p>Tuy cú pháp của C++ tương đối chặt chẽ và khó tiếp cận hơn so với một số ngôn ngữ khác, nhưng khi đã nắm vững, người học sẽ hình thành được tư duy lập trình logic, tư duy tối ưu, và nền tảng vững chắc để tiếp cận các ngôn ngữ cũng như công nghệ nâng cao sau này.</p>
+      <p>C++ là ngôn ngữ mạnh, tốc độ cao, được sử dụng phổ biến trong thi đấu thuật toán.</p>
 
       <h3 id="python">Python</h3>
-      <p><b>Python</b> là ngôn ngữ lập trình có cú pháp đơn giản, dễ đọc và dễ hiểu, giúp người học nhanh chóng tiếp cận tư duy lập trình mà không bị rào cản bởi cú pháp phức tạp. Nhờ cách viết ngắn gọn và rõ ràng, Python cho phép viết code rất nhanh, đặc biệt phù hợp cho việc prototyping (xây dựng và kiểm thử ý tưởng ban đầu).</p>
-      <p>Python thường được sử dụng trong các bài toán không yêu cầu hiệu năng quá cao, nơi tính dễ đọc và tốc độ phát triển được ưu tiên hơn tốc độ thực thi. Với hệ sinh thái thư viện phong phú, Python hỗ trợ tốt cho nhiều lĩnh vực như xử lý dữ liệu, trí tuệ nhân tạo, machine learning, tự động hóa, và khoa học máy tính ứng dụng.</p>
-      <p>Trong học tập và giải bài tập thuật toán, Python giúp người học tập trung vào ý tưởng và phương pháp giải, thay vì phải lo nhiều đến quản lý bộ nhớ hay các chi tiết kỹ thuật thấp. Điều này khiến Python trở thành lựa chọn rất tốt cho người mới bắt đầu, cũng như cho các bài toán có độ phức tạp vừa phải.</p>
-      <p>Tuy tốc độ chạy của Python chậm hơn so với C++, nhưng với những bài toán phù hợp, Python vẫn mang lại hiệu quả cao nhờ tính linh hoạt, khả năng mở rộng, và thời gian phát triển ngắn.</p>
+      <p>Python dễ đọc, nhanh viết, phù hợp cho prototyping và bài toán không quá nặng.</p>
     </section>
 
     <!-- II -->
@@ -260,52 +252,37 @@
       <p>Mỗi subtask có giới hạn nhỏ hơn để ăn điểm từng phần.</p>
 
       <h4>d) Độ phức tạp</h4>
-      <p>Độ phức tạp (complexity) dùng để đánh giá mức độ tốn tài nguyên của một thuật toán khi kích thước dữ liều đầu vào tăng lên.</p>
-      <p>Thông thường ta quan tâm đến hai loại:</p>
-      <ul>
-        <li><b>Độ phúc tạp thời gian:</b> thuật toán chạy bao nhiêu phép toán.</li>
-        <li><b>Độ phức tạp bộ nhớ:</b> thuật toán dùng bao nhiêu bộ nhớ</li>
-      </ul>
-      <p><b>Tại sao cần quan tâm đến độ phức tạp?</b></p>
-      <p>Máy tính hay bài toán có giới hạn về thời gian chạy (thời ở khoảng 1-2 giây)</p>
-      <p>Nếu thuật toán quá chậm, dù code đúng nhưng vẫn bị <b>TLE (Time Limit Exceeded)</b> và máy chấm sẽ không tính điểm của task đó.</p>
-      <p>Vì vậy, mục tiêu của việc thiết kế thuật toán là giảm độ phức tạp xuống mức có thể chạy được trong thời gian giới hạn.</p>
+      <p>Mục tiêu của script là giảm độ phức tạp xuống mức chạy được trong thời gian cho phép.</p>
     </section>
 
     <!-- III -->
     <section id="twopointers">
       <h2>III. Phương pháp làm bài</h2>
-      <h3>Hai con trỏ (Two Pointers)</h3>
+      <h3>Two Pointers</h3>
 
       <h4>1. Khái niệm</h4>
       <p>Dùng hai con trỏ để duyệt mảng nhằm giảm độ phức tạp.</p>
 
       <h4>2. Ví dụ</h4>
-      <p>Cho mảng a có n phần tử, kiểm tra cặp số có tổng bằng X trong mảng đã sắp xếp.</p>
-      
+      <p>Kiểm tra cặp số có tổng bằng X trong mảng đã sắp xếp.</p>
+
       <h4>Ý tưởng làm bài</h4>
-<div class="code-box">
-<pre><code class="language-none">Khởi tạo hai con trỏ:
-- Con trỏ trái (l = 0) bắt đầu từ đầu mảng
-- Con trỏ phải (r = n-1) bắt đầu từ cuối mảng
+      <div class="code-box">
+        <pre><code class="language-none">Khởi tạo hai con trỏ:
+- Con trỏ trái (l) bắt đầu từ đầu mảng
+- Con trỏ phải (r) bắt đầu từ cuối mảng
+
 Trong khi l < r:
 - Tính tổng a[l] + a[r]
 - Nếu tổng == X → tìm được đáp án, dừng
 - Nếu tổng < X → tăng l (cần tổng lớn hơn)
 - Nếu tổng > X → giảm r (cần tổng nhỏ hơn)
+
 Kết thúc vòng lặp mà chưa tìm được → không tồn tại cặp phù hợp
 
 Độ phức tạp: O(n) do mỗi con trỏ chỉ đi tối đa n bước</code></pre>
-<div class="code-box">
-<pre><code class="language-none">n = 4
-a = [1, 3, 5, 10]:
-x = 8
+      </div>
 
-l=0 (1), r=3 (10) → 11 > 8 → r--
-l=0 (1), r=2 (5)  → 6  < 8 → l++
-l=1 (3), r=2 (5)  → 8 ✓ </code></pre>
-  
-</div>
       <h4>3. Các dạng</h4>
       <ul>
         <li>Ngược chiều</li>
@@ -351,6 +328,92 @@ bool twoSum(vector<int>& a, int X) {
       <div class="tip">
         Từ khóa: mảng đã sắp xếp, tìm cặp, đoạn con liên tiếp, tối ưu O(n).
       </div>
+    
+
+    <!-- Dynamic Programming -->
+    <section id="dp">
+      <h3>Dynamic Programming (Quy hoạch động)</h3>
+
+      <h4>1. Khái niệm</h4>
+      <p>
+        <b>Quy hoạch động (Dynamic Programming)</b> là phương pháp chia bài toán lớn thành các bài toán con nhỏ hơn,
+        lưu lại kết quả của các bài toán con để tránh tính toán lặp lại.
+      </p>
+
+      <h4>2. Ví dụ</h4>
+      <p>Bài toán: Đếm số cách leo lên cầu thang có <code>n</code> bậc, mỗi lần đi 1 hoặc 2 bậc.</p>
+
+      <h4>Ý tưởng làm bài</h4>
+      <div class="code-box">
+        <pre><code class="language-none">Gọi dp[i] là số cách đi tới bậc thứ i
+
+- Để tới bậc i:
+  + Có thể đi từ bậc i-1 (đi 1 bước)
+  + Hoặc từ bậc i-2 (đi 2 bước)
+
+=> dp[i] = dp[i-1] + dp[i-2]
+
+Điều kiện ban đầu:
+- dp[0] = 1 (đứng yên)
+- dp[1] = 1 (chỉ có 1 cách)
+
+Tính dp tăng dần từ nhỏ tới lớn
+
+Độ phức tạp:
+- Thời gian: O(n)
+- Bộ nhớ: O(n) (có thể tối ưu xuống O(1))</code></pre>
+      </div>
+
+      <h4>3. Các dạng thường gặp</h4>
+      <ul>
+        <li>DP 1 chiều (Fibonacci, cầu thang)</li>
+        <li>DP 2 chiều (xâu con chung, balo)</li>
+        <li>DP trên đoạn</li>
+        <li>DP trên cây / đồ thị</li>
+      </ul>
+
+      <h4>4. Code</h4>
+      <div class="code-box" id="dpCodeBox">
+        <div class="code-header" onclick="document.getElementById('dpCodeBox').classList.toggle('collapsed')">
+          ▶ Xem code C++ & Python
+        </div>
+        <div class="code-content">
+          <pre><code class="language-cpp">#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    vector<long long> dp(n+1);
+    dp[0] = 1;
+    if (n >= 1) dp[1] = 1;
+
+    for (int i = 2; i <= n; i++)
+        dp[i] = dp[i-1] + dp[i-2];
+
+    cout << dp[n];
+}
+</code></pre>
+
+          <pre><code class="language-python">n = int(input())
+
+dp = [0] * (n + 1)
+dp[0] = 1
+if n >= 1:
+    dp[1] = 1
+
+for i in range(2, n + 1):
+    dp[i] = dp[i - 1] + dp[i - 2]
+
+print(dp[n])
+</code></pre>
+        </div>
+      </div>
+
+      <h4>5. Mẹo & từ khóa</h4>
+      <div class="tip">
+        Từ khóa nhận biết: bài toán tối ưu, đếm số cách, có trạng thái phụ thuộc vào trạng thái trước,
+        subtask nhỏ ăn được bằng brute force.
+      </div>
     </section>
 
   </main>
@@ -366,5 +429,15 @@ bool twoSum(vector<int>& a, int X) {
       sub.style.display = sub.style.display === 'block' ? 'none' : 'block';
     }
   </script>
+<script>
+function toggleMenu(el) {
+  const submenu = el.nextElementSibling;
+  submenu.classList.toggle('open');
+}
+
+function toggleSidebar() {
+  document.body.classList.toggle('sidebar-collapsed');
+}
+</script>
 </body>
 </html>
