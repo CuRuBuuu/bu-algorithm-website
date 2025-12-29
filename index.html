@@ -294,25 +294,25 @@ l=1 (a[l]=3), r=2 (a[r]=5)  → 8  ✓ </pre></code>
           <pre><code class="language-cpp">#include <bits/stdc++.h>
 using namespace std;
 
-bool twoSum(vector<int>& a, int X) {
+bool twoSum(vector<int>& a, int x) {
     int l = 0, r = a.size() - 1;
     while (l < r) {
         int s = a[l] + a[r];
-        if (s == X) return true;
-        if (s < X) l++;
+        if (s == x) return true;
+        if (s < x) l++;
         else r--;
     }
     return false;
 }
 </code></pre>
 
-          <pre><code class="language-python">def two_sum(arr, X):
+          <pre><code class="language-python">def two_sum(arr, x):
     l, r = 0, len(arr) - 1
     while l < r:
         s = arr[l] + arr[r]
-        if s == X:
+        if s == x:
             return True
-        if s < X:
+        if s < x:
             l += 1
         else:
             r -= 1
@@ -332,18 +332,66 @@ bool twoSum(vector<int>& a, int X) {
       </ul>
       
       <p><b>Ví dụ</p></b>
-      <p>Cho mảng a có n phần tử, tìm mảng con liên tiếp dài nhất có tổng ≤ s.</p>
+      <p>Cho mảng a có n phần tử, tìm độ dài mảng con liên tiếp dài nhất có tổng ≤ s.</p>
       <div class="code-box">
         <pre><code class="language-none">n = 6
 a = [1, 3, 10, 5, 6, 1]
 s = 12
+ans = -2e9 (số vô cùng nhỏ để so sánh max)
 
-Đặt hai đầu mút là l = 0 và r = 1
-l=0 (a[l]=1), r=1 (a[r]=3)   → 4  ≤ 12 → tăng r
-l=0 (a[l]=1), r=2 (a[r]=10)  → 14 > 12 → tăng l
-l=1 (a[l]=3), r=2 (a[r]=10)  → 13 > 12  ✓ </pre></code>
+Đặt hai đầu mút là l = 0 và r = 1, với mỗi vòng lặp nếu thỏa mãn tổng ≤ s thì ans = max(ans, r - l + l)
+*r - l + 1 là độ dài mảng con, +1 vì tính cả l.
+
+l=0, r=0 → cộng từ a[0] đến a[0] → 1  ≤ 12 → tăng r, ans = max(-2e9, 1) = 1
+l=0, r=1 → cộng từ a[0] đến a[1] → 4  ≤ 12 → tăng r, ans = max(1, 2) = 2
+l=0, r=2 → cộng từ a[0] đến a[2] → 14 > 12 → tăng l
+l=1, r=2 → cộng từ a[1] đến a[2] → 13 > 12 → tăng l
+l=2, r=2 → 10 ≤ 12 → tăng r, ans = max(2, 1) = 2
+l=2, r=3 → 15 > 12 → tăng l
+l=3, r=3 → 5  ≤ 12 → tăng r, ans = max(2, 1) = 2
+l=3, r=4 → 11 ≤ 12 → tăng r, ans = max(2, 2) = 2
+l=3, r=5 → 12 ≤ 12 (kết thúc vì đã chạy hết mảng a), ans = max(2, 3) = 3
+Vậy độ dài mảng con dài nhất là: 3</pre></code>
       </div>
-      
+
+      <p><b>! Code</b></p>
+      <div class="code-box" id="codeBox">
+        <div class="code-header" onclick="toggleCode()">▶ Xem code C++ & Python</div>
+        <div class="code-content">
+          <pre><code class="language-cpp">#include <bits/stdc++.h>
+using namespace std;
+
+int smallarray(int n, vector<int>& a, int s) {
+    int l = 0, r = 0, t = 0, ans = -2e9;
+    while (r < n) {
+        int t += a[r];
+        if (t <= s) {
+          ans = max(ans, r - l + 1);
+          r++;
+        }
+        else {
+          t -= a[l]; #t trừ đi a[l] vì đầu mảng con (l) tiến lên nên sẽ bỏ đi phần tử a[l] cũ
+          l++;
+        }
+    }
+    return ans;
+}
+</code></pre>
+
+          <pre><code class="language-python">def smallarray(n, arr, s):
+    l, r, t, ans = 0, 0, 0, -float(inf)
+    while r < n:
+        t += arr[r]
+        if t <= s:
+            ans = max(ans, r - l + 1)
+            r += 1
+        else:
+            t -= arr[l]
+            l += 1
+    return ans
+</code></pre>
+        </div>
+      </div>
       <h4>3. Mẹo & từ khóa</h4>
       <div class="tip">
         Từ khóa: mảng đã sắp xếp, tìm cặp, đoạn con liên tiếp, tối ưu O(n).
