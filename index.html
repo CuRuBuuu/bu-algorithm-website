@@ -175,35 +175,37 @@
 </head>
 <body>
 
+
   <!-- Sidebar -->
   <aside class="sidebar">
-    <h2>📚 Mục lục</h2>
+  <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+  <nav>
+    <ul>
+      <li>
+        <span class="menu-item" onclick="toggleMenu(this)">I. Giới thiệu</span>
+        <ul class="submenu">
+          <li><a href="#intro">Giới thiệu C++ & Python</a></li>
+        </ul>
+      </li>
+      <li>
+        <span class="menu-item" onclick="toggleMenu(this)">II. Cấu trúc</span>
+        <ul class="submenu">
+          <li><a href="#thinking">Tư duy bài toán</a></li>
+          <li><a href="#grading">Phương pháp chấm</a></li>
+        </ul>
+      </li>
+      <li>
+        <span class="menu-item" onclick="toggleMenu(this)">III. Phương pháp</span>
+        <ul class="submenu">
+          <li><a href="#two-pointers">Two Pointers</a></li>
+          <li><a href="#dp">Dynamic Programming</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>
+<!-- Main-->
 
-    <div class="nav-section">
-      <div class="nav-title" onclick="toggleNav(this)">I. Giới thiệu về Code ▸</div>
-      <div class="nav-sub">
-        <a href="#cpp">C++</a>
-        <a href="#python">Python</a>
-      </div>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-title" onclick="toggleNav(this)">II. Cấu trúc đề / Script ▸</div>
-      <div class="nav-sub">
-        <a href="#thinking">Tư duy về bài</a>
-        <a href="#judging">Phương pháp chấm bài</a>
-      </div>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-title" onclick="toggleNav(this)">III. Phương pháp làm bài ▸</div>
-      <div class="nav-sub">
-        <a href="#twopointers">Two Pointers</a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Main -->
   <main class="main">
 
     <!-- Hero -->
